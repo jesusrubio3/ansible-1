@@ -9,3 +9,21 @@
           uid: "1222"
           password: "$6$sO85C2hJUeC4buY5$Qtd8/T.aTWE7bXwbxMPILIUWtnqXbxgn2QCizoP6i6PLqzNH52bp1s44fd0uchp2DAP7GsnJY0pE2tFeOGP4n1"
           shell: "/bin/bash"
+
+    - name: "Descargar url"
+      become: yes
+      get_url:
+             url: https://wordpress.org/latest.zip
+             dest: /home/ejercicio
+
+
+    - name: "Instalar paquete zip"
+      apt:
+        name: zip
+
+    - name: "Descomprimir zip"
+      unarchive:
+       src: /home/ejercicio/wordpress-5.8.1.zip
+       dest: /home/ejercicio
+       remote_src: yes
+
