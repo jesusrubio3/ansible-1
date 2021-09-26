@@ -35,3 +35,8 @@
       apt: 
         name: python3-mysqldb
 
+    - name: "creación base de datos jesusrubio_wordpress"
+      mysql_db: 
+          name=jesusrubio_wordpress
+          state=present
+
