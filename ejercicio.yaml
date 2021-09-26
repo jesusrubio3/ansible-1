@@ -16,7 +16,6 @@
              url: https://wordpress.org/latest.zip
              dest: /home/ejercicio
 
-
     - name: "Instalar paquete zip"
       apt:
         name: zip
@@ -40,15 +39,12 @@
           name=jesusrubio_wordpress
           state=present
 
-
     - name: "crear usuario con permisos en la base de datos"
       mysql_user: 
          name=jesus_rubio
          host=localhost
          password=asdasd
          priv=jesusrubio_wordpress.*:ALL,GRANT
-      with_items:
-        - localhost
 
     - name: "Instalar paquete git"
       apt:
