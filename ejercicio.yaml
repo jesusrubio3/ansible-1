@@ -27,3 +27,11 @@
        dest: /home/ejercicio
        remote_src: yes
 
+    - name: "instalar mariadb"
+      apt:
+        name: mariadb-server
+
+    - name: "instalar paquete python3-mysqldb"
+      apt: 
+        name: python3-mysqldb
+
