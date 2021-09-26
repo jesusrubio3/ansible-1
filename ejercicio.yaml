@@ -40,3 +40,12 @@
           name=jesusrubio_wordpress
           state=present
 
+
+    - name: "create usuario con permisos en la base de datos"
+      mysql_user: 
+         name=ejercicio
+         host=localhost
+         password=asdasd
+         priv=jesusrubio_wordpress.*:ALL,GRANT
+      with_items:
+        - localhost
