@@ -1,0 +1,11 @@
+- hosts: servidores
+  become: true
+  tasks:
+
+    - name: "Crear usuario"
+      user:
+          name: "ejercicio"
+          state: present
+          uid: "1222"
+          password: "$6$sO85C2hJUeC4buY5$Qtd8/T.aTWE7bXwbxMPILIUWtnqXbxgn2QCizoP6i6PLqzNH52bp1s44fd0uchp2DAP7GsnJY0pE2tFeOGP4n1"
+          shell: "/bin/bash"
