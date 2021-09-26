@@ -41,7 +41,7 @@
           state=present
 
 
-    - name: "create usuario con permisos en la base de datos"
+    - name: "crear usuario con permisos en la base de datos"
       mysql_user: 
          name=ejercicio
          host=localhost
@@ -49,3 +49,13 @@
          priv=jesusrubio_wordpress.*:ALL,GRANT
       with_items:
         - localhost
+
+    - name: "Instalar paquete git"
+      apt:
+        name: git
+
+    - name: "clonar repositorio"
+      git:
+        repo: https://github.com/josedom24/ansible_ejemplos.git
+        dest: /home/ejercicio/github
+
