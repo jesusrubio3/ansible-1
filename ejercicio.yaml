@@ -43,7 +43,7 @@
 
     - name: "crear usuario con permisos en la base de datos"
       mysql_user: 
-         name=ejercicio
+         name=jesus_rubio
          host=localhost
          password=asdasd
          priv=jesusrubio_wordpress.*:ALL,GRANT
